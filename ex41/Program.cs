@@ -2,17 +2,15 @@
 0, 7, 8, -2, -2 -> 2
 1, -7, 567, 89, 223-> 4 */
 
-Console.WriteLine("Введите 5 чисел: ");
-int M = Convert.ToInt32(Console.ReadLine()); 
-
-int[] array = new int [M];
+Console.WriteLine("Введите числа через запятую: ");
+int [] numbers = Array.ConvertAll(Console.ReadLine().Split(","), int.Parse);
 int count = 0;
-
-for(int i = 0; i<M; i++)
+for(int i=0; i < numbers.Length; i++)
 {
-   if(array[i]>0)
+   if(numbers[i]>0)
    {
-    count++;
-   } 
+      count++;
+   }
 }
-Console.WriteLine(count);
+
+Console.WriteLine($"Вы ввели чисел больше нуля -> {count} ");
